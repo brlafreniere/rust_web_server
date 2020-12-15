@@ -7,6 +7,8 @@ fn handle_client(mut stream: TcpStream) {
 }
 
 fn main() -> std::io::Result<()> {
+    let current_dir = std::env::current_dir()?;
+
     let listener = TcpListener::bind("127.0.0.1:7878")?;
 
     for stream in listener.incoming() {
